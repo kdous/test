@@ -1,1 +1,8 @@
 asdfTE测试一下
+        List<String> permissionList = getWaitForRequestPermissionList();
+        if (permissionList != null && permissionList.size() > 0) {
+            String[] permissions = permissionList.toArray(new String[permissionList.size()]);
+            ActivityCompat.requestPermissions(this, permissions, 1);
+        } else {
+            initNearby();
+        }
